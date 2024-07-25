@@ -15,9 +15,21 @@ void insert(nodePtr *L, int data) {
     }
 }
 
+void delete(nodePtr *L, int data) {
+    nodePtr *trav;
+    for(trav = L; *trav != NULL && (*trav)->elem != data; trav = &(*trav)->link) { }
+    if(*trav != NULL) {
+        nodePtr temp = *trav;
+        *trav = (*trav)->link;
+        free(temp);
+    }
+    
+}
+
 int main() {
     nodePtr L = NULL;
     insert(&L, 2);
     insert(&L, 5);
     insert(&L, 7);
+    delete(&L, 5);
 }
