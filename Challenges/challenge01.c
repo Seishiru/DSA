@@ -37,11 +37,9 @@ int main() {
     LL = populateLL();
 
     // [1 Call initvs and displayCB]
-    initvs(&vs);
-    displayCB(vs, G);
+    
     // [3 Call the populateCB and displayCB]
-    populateCB(&vs, &G, &LL);
-    displayCB(vs, G);
+    
 
 }
 
@@ -75,12 +73,7 @@ void displayLL(nodePtr LL) {
 }
 void initvs(VisualHeap *vs) {
     // [2] Provide the code below
-    int x;
-    for(x = 0; x < VH_SIZE; x++) {
-        vs->space[x].next = x - 1;
-        strcpy(vs->space[x].elem, "  ");
-    }
-    vs->avail = x-1;
+    
 }
 void displayCB(VisualHeap vs, list G) {
     int x;
@@ -93,33 +86,16 @@ void displayCB(VisualHeap vs, list G) {
 }
 int allocSpace(VisualHeap *vs) {
     // [6] Provide the code below
-    int avail = vs->avail;
-    if(avail != -1){
-        vs->avail = vs->space[avail].next;
-    }
-    return avail;
+    
 }
 void CBinsertSorted(VisualHeap *vs, list *G, string data) {
     // [5] Provide the code below
-    if (vs->avail != -1) {
-		int *x;
-		for(x = G; *x != -1 && strcmp(vs->space[*x].elem, data) < 0; x = &vs->space[*x].next) { }
-        int getSpace = allocSpace(vs);
-        if(getSpace != -1) {
-            strcpy(vs->space[getSpace].elem, data);
-            vs->space[getSpace].next = *x;
-            *x = getSpace;
-		}
-	} else {
-		printf("No available space. Person with name: %s cannot be inserted.\n", data);
-	}
+    
 }
 void populateCB(VisualHeap *vs, list *G,nodePtr *LL) {
     nodePtr trav;
     for(trav = *LL; trav != NULL; trav = trav->link) {
         // [4 Provide the code below]
-        nodePtr temp = trav;
-        CBinsertSorted(vs, G, temp->elem);
-        free(temp);
+        
     }
 }
