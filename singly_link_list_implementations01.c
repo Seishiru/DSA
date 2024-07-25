@@ -14,7 +14,10 @@ void insert(nodePtr *L, int data) {
         *L = temp;
     }
 }
-
+// If you don't know what happend draw or use python tutor and replace the line 23 with this code comment below
+// for(trav = L; 
+//    *trav != NULL && (*trav)->elem != data; 
+//     trav = &(*trav)->link) { }
 void delete(nodePtr *L, int data) {
     nodePtr *trav;
     for(trav = L; *trav != NULL && (*trav)->elem != data; trav = &(*trav)->link) { }
