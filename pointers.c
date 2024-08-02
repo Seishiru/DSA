@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int main() {
     int **c, *b, a = 27;
     b = &a;
