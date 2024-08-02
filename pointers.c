@@ -3,7 +3,7 @@
 
 int main() {
     int **c, *b, a= 27;
-    *b = a;
+    b = &a;
     c = &b;
 
     printf("value of a: %d\n", a);
